@@ -1,0 +1,81 @@
+body {
+  background:url(/images/67.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+
+.formContainer {
+    
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 500px;
+  padding: 50px;
+  margin: auto;
+  border: solid 4px #ccc;
+  box-shadow: -5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(10px); 
+}
+
+
+
+h1{
+    text-align: center;
+font-size: 30px;
+}
+
+h2{
+    text-align: center;
+font-size: 15px;
+}
+
+h3{
+    /* text-align: center; */
+font-size: 12px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin:2rem;
+}
+
+.formContainer
+label {
+    font-size: 10px;
+}
+
+.formContainer
+input {
+    height: 9px;
+    /* width: 80%; */
+
+}
+.p {
+  text-align: center;
+}
+
+.radio{
+    display: grid;
+    grid-template-columns: 10% 80%;
+}
+
+.attend{
+    display: grid;
+    grid-template-columns: 10% 80%;
+}
+
+
+.formContainer
+input,
+input::-webkit-input-placeholder {
+    font-size: 10px;
+    line-height: 3;
+    color: coral;
+}
+
+u{
+text-decoration-color:coral;
+}
