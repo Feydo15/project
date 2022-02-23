@@ -35,7 +35,7 @@ h3{
     /* text-align: center; */
 font-size: 12px;
 }
-.grid {
+.body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -53,11 +53,11 @@ input {
     /* width: 80%; */
 
 }
-.p {
+.date {
   text-align: center;
 }
 
-.radio{
+.checkbox {
     display: grid;
     grid-template-columns: 10% 80%;
 }
