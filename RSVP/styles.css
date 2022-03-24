@@ -29,10 +29,10 @@ h2 {
 }
 
 h3 {
-  /* text-align: center; */
+
   font-size: 12px;
 }
-.body {
+.body{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -45,7 +45,7 @@ h3 {
 
 .formContainer input {
   height: 9px;
-  /* width: 80%; */
+
 }
 .date {
   text-align: center;
@@ -53,7 +53,7 @@ h3 {
 
 .checkbox {
   display: grid;
-  grid-template-columns: 10% 80%;
+  grid-template-columns: 30% 70%;
 }
 
 .attend {
@@ -70,4 +70,71 @@ input::-webkit-input-placeholder {
 
 u {
   text-decoration-color: black;
+}
+
+#btn{
+  display:block;
+  margin: auto;
+  text-align: center;
+  color: coral;
+  /* padding:9px; */
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* label{
+  width: 240px;
+  display:inline-block;
+
+} */
+
+
+.partners4 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+
+  /* gap: 1rem; */
+  margin: 1rem;
+}
+
+.first label {
+  width: 50px;
+  display:inline-block;
+
 }

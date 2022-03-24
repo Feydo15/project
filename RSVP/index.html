@@ -11,7 +11,7 @@
 
 <body>
 
-    <form class="formContainer">
+    <form class="formContainer" id="myForm">
         <h1 id="title">RSVP FORM</h1>
         <h2>FEYDO AND LIZZY`S</h2>
         <h2 style="background-color: coral;">🥃 🍽 <u>DINNER PARTY</u> 🍽 🥃</h2>
@@ -29,60 +29,105 @@
                 <br>
                 <br>
                 <label for="name" id="name1">Surname</label>
-                <input type="text" id="name" placeholder="please enter your surname">
+                <input type="text" id="surname" placeholder="please enter your surname">
                 <br>
                 <br>
                 <label for="dob" id="dob">Date Of Birth</label>
-                <input type="date" id="name" placeholder="please enter your D.O.B">
+                <input type="date" id="date" placeholder="please enter your D.O.B">
                 <br>
                 <br>
                 <label for="email" id="email1">Email Address</label>
-                <input type="email" id="name" placeholder="type in your Email">
+                <input type="email" id="email" pattern=".+@gmail\.com" placeholder="type in your Email">
                 <br>
                 <br>
                 <label for="number" id="number1">Contact Number</label>
-                <input type="tel" maxlength="12" pattern="+27[6-8]{2-5}-[0-9]{0-9}-[0-9]{0-9}" value="+27" id="name"
-                    placeholder="type in your contact number">
+                <input type="tel" maxlength="12" pattern="[0-9]{10}" value="+27" id="contact" placeholder="type in your contact number">
             </div>
 
 
             <div class="second">
 
+                <h3>Will you attend ?</h3>
+                <div class="attend">
+                    <input type="radio" id="radio" onclick="show()" value="yes" name="fav_language">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="radio" onclick="hide()" value="no" name="fav_language">
+                    <label for="no">No</label>
+                </div>
+                
+                
+                <div style="display:none" id="hideShow">
 
                 <h3>Will you bring a partner ?</h3>
             <div class="attend">
-                <input type="radio" id="radio" value="yes" name="fav_language">
+                <input type="radio" id="partner" onclick="partners1()" value="yes" name="language">
                 <label for="yes">Yes</label>
-                <input type="radio" id="radio" value="no" name="fav_language">
+                <input type="radio" id="partner" onclick="partners2()" value="no" name="language">
                 <label for="no">No</label>
             </div>
                 <h3>Food choice</h3>
+<div class="partners4">
+    <div class="checkbox" id="food">
+        <input type="checkbox" value="Beef" id="food" name="foods">
+        <label for="Beef">Beef</label>
 
-                <div class="checkbox">
-                    <input type="checkbox" value="Beef" id="food">
-                    <label for="Beef">Beef</label>
+        <input type="checkbox" value="chicken" id="food" name="foods">
+        <label for="chicken">Chicken</label>
 
-                    <input type="checkbox" value="chicken" id="food">
-                    <label for="chicken">Chicken</label>
+        <input type="checkbox" value="Pork" id="food" name="foods">
+        <label for="pork">Pork</label>
 
-                    <input type="checkbox" value="Pork" id="food">
-                    <label for="pork">Pork</label>
+        <input type="checkbox" id="myBtn" class="myBtn">
+        <label for="other">Other</label>
 
-                    <input type="checkbox" value="other" id="food">
-                    <label for="other">Other</label>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Please enter your food choice</p>
+        <input type="text" id="showHide" placeholder="food choice">
+        </div>
+        </div>
+        </div>
 
+
+
+    <div style="display:none" id="partners5">
+    
+        <!-- <h3>Partner's</h3> -->
+        <!-- <input type="checkbox" value="Beef" id="food" name="foods" >
+            <input type="text">
+            <label for="Beef">Beef</label>
+
+        <input type="checkbox" value="chicken" id="food" name="foods">
+        <label for="chicken">Chicken</label>
+        <input type="checkbox" value="Pork" id="food" name="foods">
+        <label for="pork">Pork</label> -->
+
+        <input type="checkbox" id="myBtn2" class="myBtn2">
+        <label for="other">Other</label>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Please enter your food choice</p>
+                <input type="text" id="showHide1" placeholder="food choice">
+
+    </div>
+    </div>
+                </div>
+                </div>
+                </div>
+                </div>
                 </div>
 
-
-
-
-            </div>
-        </div>
         <h3 style="text-align:center">3657 RED PEAR STREET EXT 21 OLIEVENHOUTBOSCH CENTURION <br> RSVP NO:0001 </h3>
 
-
-
+        <button type="submit" id="btn" onclick="mySubmit(event), myFunction()">Submit</button>
+    
     </form>
+    <div id="output">
+    
+    </div>
+    <script src="/scripts.js"></script>
 </body>
 
 </html>
