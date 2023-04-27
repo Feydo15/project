@@ -274,182 +274,174 @@
 const { ListGroup } = require("reactstrap");
 
 // const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
-// 
+//
 // let canDrink = [];
-// 
+//
 // for(let i = 0; i < ages.length; i++){
-    // if(ages[i] >= 21)
-    // canDrink.push(ages[i])
+// if(ages[i] >= 21)
+// canDrink.push(ages[i])
 // }
-// 
+//
 // const combinedArray = canDrink
 //   .map((age) => age * 2)
 //   .filter((age) => age >= 40)
 //   .sort((a, b) => a - b)
 //   .reduce((a, b) => a + b, 0);
-//  
+//
 // console.log(combinedArray);
 
-// 
+//
 // const companies= [
-    // {name: "Company One", category: "Finance", start: 1981, end: 2004},
-    // {name: "Company Two", category: "Retail", start: 1992, end: 2008},
-    // {name: "Company Three", category: "Auto", start: 1999, end: 2007},
-    // {name: "Company Four", category: "Retail", start: 1989, end: 2010},
-    // {name: "Company Five", category: "Technology", start: 2009, end: 2014},
-    // {name: "Company Six", category: "Finance", start: 1987, end: 2010},
-    // {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
-    // {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
-    // {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
+// {name: "Company One", category: "Finance", start: 1981, end: 2004},
+// {name: "Company Two", category: "Retail", start: 1992, end: 2008},
+// {name: "Company Three", category: "Auto", start: 1999, end: 2007},
+// {name: "Company Four", category: "Retail", start: 1989, end: 2010},
+// {name: "Company Five", category: "Technology", start: 2009, end: 2014},
+// {name: "Company Six", category: "Finance", start: 1987, end: 2010},
+// {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
+// {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
+// {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
 //   ];
-  
 
 //   const companyNames = companies.filter(company => company.category === 'Retail');
-     
 
 //   companies.forEach(company => {
-    //   
-    //   console.log(company.start)
+//
+//   console.log(company.start)
 //   });
-
-
 
 // let Array1 = [5,7,9,2,6];
 // let Array2 = [1,4,8,0,3];
 // let oddArr = [];
 // let evenArr = [];
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 // const combinedArray = Array1.concat(Array2).sort((a, b) => b - a);
-// 
+//
 // for(let i = 0; i < combinedArray.length; i++){
-    // 
-// 
-    // if(combinedArray[i] % 2 === 1){
-        // oddArr.push(combinedArray[i]);
-    // }
-// 
-    // if(combinedArray[i] % 2 === 0){
-        // evenArr.push(combinedArray[i]);
-    // }
+//
+//
+// if(combinedArray[i] % 2 === 1){
+// oddArr.push(combinedArray[i]);
 // }
-// 
+//
+// if(combinedArray[i] % 2 === 0){
+// evenArr.push(combinedArray[i]);
+// }
+// }
+//
 // let sumOdd = oddArr.reduce((a, b) => a + b, 0);
-// 
+//
 // let sumEven = evenArr.reduce((a, b) => a + b, 0);
-// 
-// 
+//
+//
 // let total = oddArr.concat(evenArr).reduce((a, b) => a + b, 0);
-// 
-// 
-// 
-// 
-// 
+//
+//
+//
+//
+//
 // console.log(sumOdd)
 // console.log("--------------------");
 // console.log(sumEven)
 // console.log("--------------------");
 // console.log(total)
 
-         //alt methods   
+//alt methods
 
 // let Array1 = [5,7,9,2,6];
 // let Array2 = [1,4,8,0,3];
-// 
-// 
+//
+//
 // const combinedSortedArray = (a , b) =>{
 // let newArray = a.concat(b).sort((a , b) => b - a)
 // let oddNum = newArray.filter((a) => a % 2)
 // let evenNum = newArray.filter((a) => a % 2 == 0)
-// 
+//
 // let tot = oddNum.reduce((a, b) => a + b)
 // let tots = evenNum.reduce((a, b) => a + b);
-// 
+//
 // let sumTot = tots + tot;
-// 
+//
 // console.log('tot', sumTot)
 // }
-// 
+//
 // combinedSortedArray(Array1 , Array2)
-// 
-// 
-let list = [{name:"Thabo" , mark : 40} , {name:"smith" , mark : 33} , {name:"Nean" , mark : 22}];
+//
+//
+let list = [
+  { name: "Thabo", mark: 40 },
+  { name: "smith", mark: 33 },
+  { name: "Nean", mark: 22 },
+];
 let pass = 60;
 
-const getAverage = (list,pass) =>{
-    
-    let marks = list.map((item) => item.mark);
-    let total= marks.reduce((a, b) => a + b, 0);
-    let average = total / pass * 100;
+const getAverage = (list, pass) => {
+  let marks = list.map((item) => item.mark);
+  let total = marks.reduce((a, b) => a + b, 0);
+  let average = (total / pass) * 100;
 
-console.log("The average is :" ,average);
-}
+  console.log("The average is :", average);
+};
 
-getAverage(list,pass)
-
+getAverage(list, pass);
 
 // given a string numbers and letters calculate total  '435443434234234234'
-let string = '4T354B3434234234234'
-let string2 = '4T354B343423423423HL90SO6784'
+let string = "4T354B3434234234234";
+let string2 = "4T354B343423423423HL90SO6784";
 
-getTotalString = (string) =>{
+getTotalString = (string) => {
+  let newString = string.split("");
+  let numbers = newString
+    .filter((v) => parseInt(v))
+    .reduce((a, b) => parseInt(a) + parseInt(b));
 
-let newString = string.split("");
-let numbers = newString.filter(v => parseInt(v)).reduce((a, b) => parseInt(a) + parseInt(b));
-
-console.log("hi",numbers);
-}
+  console.log("hi", numbers);
+};
 
 getTotalString(string2);
 
-
-
-
-
 // given a list of items return numbers
 
-let phrase =['5' , 'g' , 3 , 5 , 10 , 'dfdfdf']
-let phrase2 =[ 'g' , 3 , 5 , 10 , 'dfdfdf']
-
+let phrase = ["5", "g", 3, 5, 10, "dfdfdf"];
+let phrase2 = ["g", 3, 5, 10, "dfdfdf"];
 
 const returnNumbers = (phrase) => {
+  let num = phrase.filter(function (element) {
+    return !isNaN(element);
+  });
 
-let num = phrase.filter(function(element) {
-    return !isNaN(element)
-})
-
-let numbers = num.map(function(val) {
-    return parseFloat(val)
-})
-console.log("-------------------")
-    console.log(numbers)
-}
+  let numbers = num.map(function (val) {
+    return parseFloat(val);
+  });
+  console.log("-------------------");
+  console.log(numbers);
+};
 
 returnNumbers(phrase);
 
-
 //given a list of users your function should be able to edit a user name
 
-let info = [{name:"Thabo" , mark : 40} , {name:"smith" , mark : 33} , {name:"Nean" , mark : 22}];
+let info = [
+  { name: "Thabo", mark: 40 },
+  { name: "smith", mark: 33 },
+  { name: "Nean", mark: 22 },
+];
 const position = 2;
 const change = "feydo";
 
-const editName = (info,position,change) =>{
-    
-for(i = 0; i < info.length; i++){
-
-    if(info[i].name.includes(info[position].name)){
-        info[position].name = change
-     console.log("me",info[position].name)
+const editName = (info, position, change) => {
+  for (i = 0; i < info.length; i++) {
+    if (info[i].name.includes(info[position].name)) {
+      info[position].name = change;
+      console.log("me", info[position].name);
     }
-}
-console.log("newArray",info)
-} 
-editName(info,position,change)
-
-
+  }
+  console.log("newArray", info);
+};
+editName(info, position, change);
 
 // Asynchronous javascript
 
@@ -458,107 +450,208 @@ editName(info,position,change)
 //setTimeout
 
 // setTimeout(() => {
-// 
-    // console.log('waited 1 second')
-// 
+//
+// console.log('waited 1 second')
+//
 // },1000);
-// 
+//
 
 //nested setTimeouts
 
 // setTimeout(() => {
-    // console.log('waited 3 second')
-    // setTimeout(() => {
-        // console.log('waited 2 second')
-        // setTimeout(() => {
-            // console.log('waited 1 second')
-        // },1000);
-    // },1000);
+// console.log('waited 3 second')
+// setTimeout(() => {
+// console.log('waited 2 second')
+// setTimeout(() => {
+// console.log('waited 1 second')
 // },1000);
-// 
+// },1000);
+// },1000);
+//
 //button event handler in browser javascript
 // const btn = A;
 // btn.addEventListener('click', () => {
 //    this is one of the common method
 // })
 
-
-
 //error first callback
-fs.readFile('./text.txt', {encoding:'utf-8'}, (err, data) => {
-if(err){
-    console.log('Error');
-    console.log(err)
-}else {
-    console.log('GOT DATA')
-    console.log(data)
-}
-})
+fs.readFile("./text.txt", { encoding: "utf-8" }, (err, data) => {
+  if (err) {
+    console.log("Error");
+    console.log(err);
+  } else {
+    console.log("GOT DATA");
+    console.log(data);
+  }
+});
 
-//**************promises************** 
+//**************promises**************
 
 //Create a promise
 
-const myPromise = new Promise((resolve, reject)  => {
-     const rand = Math.floor(Math.random() * 2);
-     if(rand === 0){
-        resolve();
-     }else{
-        reject();
-     }
+const myPromise = new Promise((resolve, reject) => {
+  const rand = Math.floor(Math.random() * 2);
+  if (rand === 0) {
+    resolve();
+  } else {
+    reject();
+  }
 });
 
 myPromise
- .then(() => console.log('Success'))
-.catch(() =>console.log('Something went wrong'));
+  .then(() => console.log("Success"))
+  .catch(() => console.log("Something went wrong"));
 
 //fs readFile with promises
 
 fs.promises
-    .readFile('./text.txt', {encoding: 'utf-8'})
-    .then((data) => console.log(data))
-    .catch((err) => console.error(err));
+  .readFile("./text.txt", { encoding: "utf-8" })
+  .then((data) => console.log(data))
+  .catch((err) => console.error(err));
 
 //fetch with promises
-fetch('https://twitch.tv/jamesqquick')
- .then((res) => res.json())
- .then((data) => console.log(data))
- .catch((err) => console.error(err));
+fetch("https://twitch.tv/jamesqquick")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.error(err));
 
- //***************Async/Await*****************
+//***************Async/Await*****************
 
- //load file with async/await
+//load file with async/await
 
- const loadFile = async () => {
+const loadFile = async () => {
+  try {
+    const data = await fs.promises.readFile("./text.txt", {
+      encoding: "utf-8",
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-    try{
-        const data = await fs.promises.readFile('./text.txt', {
-            encoding: 'utf-8',
+loadFile();
 
-        });
-    } catch(error) {
-        console.error(error)
-    }
+//fetch a link with async/await without error handling
+
+const fetchList = async (id) => {
+  try {
+    const res = await fetch(`https://twitch.tv/jamesqquick/${id}`);
+    const data = await res.json;
+    console.log(data);
+  } catch (error) {
+    console.error(err);
+  }
+};
+fetchList(2);
+
+// The asynchronous nature of JavaScript to understanding the language.
+// You'll find the use of callbacks, promises,
+// and async/await in code that you write every day as a JavaScript developer.
+
+// *************************************** Node.js *********************************************
+
+// const express = require("express");
+// const fs = require("fs");
+// const path = require("path");
+
+// Create folder
+
+// fs.mkdir(path.join(__dirname, '/fileName'), {}, (err) => {
+// if (err) throw err;
+// console.log("folder created.......");
+// })
+
+// create and write to file
+
+// fs.writeFile(path.join(__dirname, '/fileName', 'Hello.txt'), "How i create and write a file", err => {
+// if (err) throw err;
+// console.log("file written to ......");
+
+// append file
+// fs.appendFile(path.join(__dirname, '/fileName', 'Hello.txt'), "How i create and write a file", err => {
+// if (err) throw err;
+// console.log("file written to ......");
+//    })
+// });
+
+// Read file
+// fs.readFile(path.join(__dirname, '/fileName','Hello.txt'), "utf8", (err, data) => {
+// if (err) throw err;
+// console.log("data.......");
+//    })
+
+// Rename file
+
+// fs.rename(
+//   path.join(__dirname, "/fileName", "Hello.txt"),
+//   path.join(__dirname, "/fileName", "helloworld.txt"),
+//   err => {
+    // if (err) throw err;
+    // console.log("data.......");
+//   }
+// );
+// 
+
+// ---------------------------------os--------------------------------------------------------
+
+// const os = require('os');
+
+// platform
+
+// console.log(os.platform())
+
+// CPU Arch
+
+// console.log(os.arch)
+
+// CPU Core Info
+
+// console.log(os.cpus())
+
+// Free memory
+// console.log(os.freemem());
+
+// Total memory
+
+// console.log(os.totalmem());
 
 
- };
+// Home directory
 
- loadFile();
+// console.log(os.homedir());
 
- //fetch a link with async/await without error handling
+// Uptime
 
- const fetchList = async (id) => {
-     
-     try{
-     const res = await fetch(`https://twitch.tv/jamesqquick/${id}`);
-     const data = await res.json; 
-    console.log(data)
-     }catch (error){
-        console.error(err);
+// console.log(os.uptime());
 
-     }
- };
- fetchList(2);
 
- //The asynchronous nature of JavaScript to understanding the language. You'll find the use of callbacks, promises, and async/await in code that you write every day as a JavaScript developer.
- 
+// -----------------------------------------------url------------------------------------------------
+
+
+// const url = require('url');
+// 
+// const myUrl = new url("http://mywebsite.com:4004/hello.html?id=100&status=active");
+// 
+// serialized URL
+
+// console.log(myUrl.href);
+// console.log(myUrl.toString());
+
+// Host (root domain)
+
+// console.log(myUrl.host);
+
+// Hostname (does not get port)
+
+// console.log(myUrl.hostname)
+
+// pathname
+
+// console.log(myUrl.pathname);
+
+// Serialized query
+
+// console.log(myUrl.search());
+
+// Params object
+// console.log(myUrl.searchParams);

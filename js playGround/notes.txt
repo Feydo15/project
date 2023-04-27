@@ -1,0 +1,138 @@
+// components/AddTodo/index.js
+
+import React from "react";
+
+function AddTodo() {
+  return <button className="add-button">Add Todo</button>;
+}
+
+export default AddTodo;
+
+
+// App.js
+
+import AddTodo from "../src/components/AddTodo";
+
+function App() {
+// ...
+      {session.info.isLoggedIn ? (
+        <CombinedDataProvider
+          datasetUrl={session.info.webId}
+          thingUrl={session.info.webId}
+        >
+          <div className="message logged-in">
+            <span>You are logged in as: </span>
+            <Text
+              properties={[
+                "http://xmlns.com/foaf/0.1/name",
+                "http://www.w3.org/2006/vcard/ns#fn",
+              ]} />
+            <LogoutButton />
+          </div>
+          <section>
+            <AddTodo />
+          </section>
+        </CombinedDataProvider>
+      ) : 
+// ...
+}
+
+
+import {
+  createSolidDataset,
+  getSolidDataset,
+  saveSolidDatasetAt,
+} from "@inrupt/solid-client";
+
+export async function getOrCreateTodoList(containerUri, fetch) {
+  const indexUrl = `${containerUri}index.ttl`;
+  try {
+    const todoList = await getSolidDataset(indexUrl, { fetch });
+    return todoList;
+  } catch (error) {
+    if (error.statusCode === 404) {
+      const todoList = await saveSolidDatasetAt(
+        indexUrl,
+        createSolidDataset(),
+        {
+          fetch,
+        }
+      );
+      return todoList;
+    }
+  }
+}
+
+
+// components/AddTodo/index.js
+
+import { getSolidDataset, getThing, getUrlAll } from "@inrupt/solid-client";
+import { useSession } from "@inrupt/solid-ui-react";
+import React, { useEffect, useState } from "react";
+import { getOrCreateTodoList } from "../../utils";
+
+function AddTodo() {
+  const { session } = useSession();
+  const [todoList, setTodoList] = useState();
+
+  useEffect(() => {
+    if (!session) return;
+    (async () => {
+      const profileDataset = await getSolidDataset(session.info.webId, {
+        fetch: session.fetch,
+      });
+      const profileThing = getThing(profileDataset, session.info.webId);
+      const podsUrls = getUrlAll(
+        profileThing,
+        "http://www.w3.org/ns/pim/space#storage"
+      );
+      const pod = podsUrls[0];
+      const containerUri = `${pod}todos/`;
+      const list = await getOrCreateTodoList(containerUri, session.fetch);
+      setTodoList(list);
+    })();
+  }, [session]);
+
+  return <button className="add-button">Add Todo</button>;
+}
+
+export default AddTodo;
+
+
+// components/AddTodo/index.js
+import {
+  addDatetime,
+  addStringNoLocale,
+  createThing,
+  getSolidDataset,
+  getSourceUrl,
+  getThing,
+  getUrlAll,
+  saveSolidDatasetAt,
+  setThing,
+} from "@inrupt/solid-client";
+
+function AddTodo() { 
+const { session } = useSession();
+// ...
+  const addTodo = async (text) => {
+    const indexUrl = getSourceUrl(todoList);
+    const todoWithText = addStringNoLocale(
+      createThing(),
+      "http://schema.org/text",
+      text
+    );
+    const todoWithDate = addDatetime(
+      todoWithText,
+      "http://www.w3.org/2002/12/cal/ical#created",
+      new Date()
+    );
+    const todoWithType = addUrl(todoWithDate, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "http://www.w3.org/2002/12/cal/ical#Vtodo");
+    const updatedTodoList = setThing(todoList, todoWithType);
+    const updatedDataset = await saveSolidDatasetAt(indexUrl, updatedTodoList, {
+      fetch: session.fetch,
+    });
+    setTodoList(updatedDataset);
+  };
+// ...
+}
